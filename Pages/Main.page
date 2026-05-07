@@ -26,7 +26,7 @@
 					"Buttons": [
 						{
 							"OnPress": "/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Customers/NavToCustomers_List.action",
-							"Alignment": "Center",
+							"Alignment": "Left",
 							"Title": "Customers",
 							"ButtonType": "Text",
 							"Semantic": "Tint",
