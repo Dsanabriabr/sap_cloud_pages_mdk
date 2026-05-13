@@ -5,17 +5,294 @@ Examples:
 @mdkYellow1: #ffbb33;
 @mdkRed1: #ff0000;
 
-//// By-Type style: All Pages in the application will now have a yellow background
-Page
 
-{ background-color: @mdkYellow1; }
-//// By-Name style: All Buttons with _Name == "BlueButton" will now have this style
-#BlueButton
+//// This style applies to all the ActionBars in the application
+ActionBar {
+    color: white;
+    background-color: red;
+}
 
-{ color: @mdkYellow1; background-color: #0000FF; }
-//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
+//// This style applies to all the ToolBars in the application
+ToolBar {
+    color: white;
+    background-color: gray;
+    bartintcolor: gray;
+}
 
-.MyButton
+/* =====================================================
+   ARMIND MDK THEME
+   Cyber Corporate Neon Style
+   ===================================================== */
 
-{ color: @mdkYellow1; background-color: @mdkRed1; }
-*/
+@brand-purple: #5A189A;
+@brand-purple-dark: #2E0A47;
+@brand-purple-light: #8E44EC;
+
+@brand-yellow: #F7C600;
+@brand-yellow-soft: #FFD93D;
+
+@brand-white: #FFFFFF;
+@brand-gray-light: #D9D9D9;
+@brand-gray: #8F8F8F;
+@brand-black: #14061F;
+
+@background-primary: #1A0828;
+@background-secondary: #250B3A;
+@background-card: rgba(255, 255, 255, 0.04);
+
+@text-primary: #FFFFFF;
+@text-secondary: #D7C9E8;
+@text-highlight: #F7C600;
+
+@border-glow: rgba(247, 198, 0, 0.45);
+
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
+Page {
+    background-color: @background-primary;
+    color: @text-primary;
+    font-family: "Avenir Next";
+}
+
+ActionBar {
+    background-color: @brand-purple-dark;
+    color: @brand-yellow;
+    font-size: 20;
+    font-weight: bold;
+    border-bottom-width: 1;
+    border-bottom-color: @border-glow;
+}
+
+/* =====================================================
+   HEADERS
+   ===================================================== */
+
+.Header {
+    color: @brand-yellow;
+    font-size: 26;
+    font-weight: bold;
+    margin-top: 12;
+    margin-bottom: 8;
+    text-transform: uppercase;
+}
+
+.SubHeader {
+    color: @text-secondary;
+    font-size: 16;
+    margin-bottom: 16;
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.Card {
+    background-color: @background-card;
+    border-radius: 16;
+    padding: 14;
+    margin: 10 14;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 30%);
+}
+
+.CardGlow {
+    background-color: @background-secondary;
+    border-radius: 18;
+    border-width: 1;
+    border-color: @border-glow;
+    padding: 16;
+    margin: 12;
+}
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.Label {
+    color: @text-primary;
+    font-size: 15;
+}
+
+.Caption {
+    color: @brand-gray-light;
+    font-size: 12;
+}
+
+.Highlight {
+    color: @brand-yellow;
+    font-weight: bold;
+}
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+.TextField,
+.TextView {
+    background-color: #2A103D;
+    color: @brand-white;
+    border-radius: 12;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 40%);
+    padding: 12;
+    margin-top: 6;
+    margin-bottom: 12;
+    placeholder-color: #B99AD8;
+}
+
+.TextField:focus,
+.TextView:focus {
+    border-color: @brand-yellow;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.Button {
+    background-color: @brand-purple;
+    color: @brand-white;
+    border-radius: 14;
+    padding: 12;
+    font-size: 16;
+    font-weight: bold;
+    margin-top: 8;
+    margin-bottom: 8;
+}
+
+.Button:pressed {
+    background-color: @brand-purple-light;
+}
+
+.PrimaryButton {
+    background-color: @brand-yellow;
+    color: @brand-black;
+}
+
+.SecondaryButton {
+    background-color: transparent;
+    border-width: 1;
+    border-color: @brand-yellow;
+    color: @brand-yellow;
+}
+
+.DangerButton {
+    background-color: #C62828;
+    color: white;
+}
+
+/* =====================================================
+   LIST / CRUD ITEMS
+   ===================================================== */
+
+.ObjectCell {
+    background-color: rgba(255,255,255,0.03);
+    border-radius: 14;
+    margin: 8 10;
+    padding: 10;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 25%);
+}
+
+.ObjectCell-title {
+    color: @brand-white;
+    font-size: 17;
+    font-weight: bold;
+}
+
+.ObjectCell-subtitle {
+    color: @text-secondary;
+    font-size: 13;
+}
+
+.ObjectCell-footnote {
+    color: @brand-yellow;
+    font-size: 12;
+}
+
+/* =====================================================
+   TAB BAR
+   ===================================================== */
+
+BottomNavigation {
+    background-color: @brand-purple-dark;
+    color: @brand-gray-light;
+    border-top-width: 1;
+    border-top-color: fade(@brand-yellow, 40%);
+}
+
+BottomNavigation .selected {
+    color: @brand-yellow;
+}
+
+/* =====================================================
+   STATUS / BADGES
+   ===================================================== */
+
+.BadgeSuccess {
+    background-color: #00C853;
+    color: white;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+.BadgeWarning {
+    background-color: @brand-yellow;
+    color: @brand-black;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+.BadgeOffline {
+    background-color: #B71C1C;
+    color: white;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+/* =====================================================
+   ANIMATED VISUAL FEEL (SOFT GLOW)
+   ===================================================== */
+
+.GlowBorder {
+    border-width: 1;
+    border-color: fade(@brand-yellow, 50%);
+}
+
+.NeonText {
+    color: @brand-yellow;
+    font-weight: bold;
+    text-shadow: 0 0 6 fade(@brand-yellow, 45%);
+}
+
+/* =====================================================
+   LOGIN SCREEN IDEA
+   ===================================================== */
+
+.LoginContainer {
+    background-color: @background-primary;
+    padding: 24;
+}
+
+.LoginLogo {
+    margin-top: 40;
+    margin-bottom: 30;
+    alignment: center;
+}
+
+.LoginTitle {
+    color: @brand-yellow;
+    font-size: 30;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10;
+}
+
+.LoginSubtitle {
+    color: @text-secondary;
+    font-size: 15;
+    text-align: center;
+    margin-bottom: 30;
+}

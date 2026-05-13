@@ -1393,21 +1393,234 @@ Examples:
 @mdkYellow1: #ffbb33;
 @mdkRed1: #ff0000;
 
-//// By-Type style: All Pages in the application will now have a yellow background
-Page
 
-{ background-color: @mdkYellow1; }
-//// By-Name style: All Buttons with _Name == "BlueButton" will now have this style
-#BlueButton
+//// This style applies to all the ActionBars in the application
+ActionBar {
+    color: white;
+    background-color: red;
+}
 
-{ color: @mdkYellow1; background-color: #0000FF; }
-//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
+//// This style applies to all the ToolBars in the application
+ToolBar {
+    color: white;
+    background-color: gray;
+    bartintcolor: gray;
+}
 
-.MyButton
-
-{ color: @mdkYellow1; background-color: @mdkRed1; }
-*/
-`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n"],"sourceRoot":""}]);
+/* =====================================================
+   ARMIND MDK THEME
+   Cyber Corporate Neon Style
+   ===================================================== */
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+Page {
+  background-color: #1A0828;
+  color: #FFFFFF;
+  font-family: "Avenir Next";
+}
+ActionBar {
+  background-color: #2E0A47;
+  color: #F7C600;
+  font-size: 20;
+  font-weight: bold;
+  border-bottom-width: 1;
+  border-bottom-color: rgba(247, 198, 0, 0.45);
+}
+/* =====================================================
+   HEADERS
+   ===================================================== */
+.Header {
+  color: #F7C600;
+  font-size: 26;
+  font-weight: bold;
+  margin-top: 12;
+  margin-bottom: 8;
+  text-transform: uppercase;
+}
+.SubHeader {
+  color: #D7C9E8;
+  font-size: 16;
+  margin-bottom: 16;
+}
+/* =====================================================
+   CARDS
+   ===================================================== */
+.Card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 16;
+  padding: 14;
+  margin: 10 14;
+  border-width: 1;
+  border-color: rgba(142, 68, 236, 0.3);
+}
+.CardGlow {
+  background-color: #250B3A;
+  border-radius: 18;
+  border-width: 1;
+  border-color: rgba(247, 198, 0, 0.45);
+  padding: 16;
+  margin: 12;
+}
+/* =====================================================
+   TEXT
+   ===================================================== */
+.Label {
+  color: #FFFFFF;
+  font-size: 15;
+}
+.Caption {
+  color: #D9D9D9;
+  font-size: 12;
+}
+.Highlight {
+  color: #F7C600;
+  font-weight: bold;
+}
+/* =====================================================
+   INPUTS
+   ===================================================== */
+.TextField,
+.TextView {
+  background-color: #2A103D;
+  color: #FFFFFF;
+  border-radius: 12;
+  border-width: 1;
+  border-color: rgba(142, 68, 236, 0.4);
+  padding: 12;
+  margin-top: 6;
+  margin-bottom: 12;
+  placeholder-color: #B99AD8;
+}
+.TextField:focus,
+.TextView:focus {
+  border-color: #F7C600;
+}
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.Button {
+  background-color: #5A189A;
+  color: #FFFFFF;
+  border-radius: 14;
+  padding: 12;
+  font-size: 16;
+  font-weight: bold;
+  margin-top: 8;
+  margin-bottom: 8;
+}
+.Button:pressed {
+  background-color: #8E44EC;
+}
+.PrimaryButton {
+  background-color: #F7C600;
+  color: #14061F;
+}
+.SecondaryButton {
+  background-color: transparent;
+  border-width: 1;
+  border-color: #F7C600;
+  color: #F7C600;
+}
+.DangerButton {
+  background-color: #C62828;
+  color: white;
+}
+/* =====================================================
+   LIST / CRUD ITEMS
+   ===================================================== */
+.ObjectCell {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 14;
+  margin: 8 10;
+  padding: 10;
+  border-width: 1;
+  border-color: rgba(142, 68, 236, 0.25);
+}
+.ObjectCell-title {
+  color: #FFFFFF;
+  font-size: 17;
+  font-weight: bold;
+}
+.ObjectCell-subtitle {
+  color: #D7C9E8;
+  font-size: 13;
+}
+.ObjectCell-footnote {
+  color: #F7C600;
+  font-size: 12;
+}
+/* =====================================================
+   TAB BAR
+   ===================================================== */
+BottomNavigation {
+  background-color: #2E0A47;
+  color: #D9D9D9;
+  border-top-width: 1;
+  border-top-color: rgba(247, 198, 0, 0.4);
+}
+BottomNavigation .selected {
+  color: #F7C600;
+}
+/* =====================================================
+   STATUS / BADGES
+   ===================================================== */
+.BadgeSuccess {
+  background-color: #00C853;
+  color: white;
+  border-radius: 20;
+  padding: 6 10;
+}
+.BadgeWarning {
+  background-color: #F7C600;
+  color: #14061F;
+  border-radius: 20;
+  padding: 6 10;
+}
+.BadgeOffline {
+  background-color: #B71C1C;
+  color: white;
+  border-radius: 20;
+  padding: 6 10;
+}
+/* =====================================================
+   ANIMATED VISUAL FEEL (SOFT GLOW)
+   ===================================================== */
+.GlowBorder {
+  border-width: 1;
+  border-color: rgba(247, 198, 0, 0.5);
+}
+.NeonText {
+  color: #F7C600;
+  font-weight: bold;
+  text-shadow: 0 0 6 rgba(247, 198, 0, 0.45);
+}
+/* =====================================================
+   LOGIN SCREEN IDEA
+   ===================================================== */
+.LoginContainer {
+  background-color: #1A0828;
+  padding: 24;
+}
+.LoginLogo {
+  margin-top: 40;
+  margin-bottom: 30;
+  alignment: center;
+}
+.LoginTitle {
+  color: #F7C600;
+  font-size: 30;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10;
+}
+.LoginSubtitle {
+  color: #D7C9E8;
+  font-size: 15;
+  text-align: center;
+  margin-bottom: 30;
+}
+`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;;;0DAwB0D;AAC1D;;0DAE0D;AAC1D;EACE,yBAAyB;EACzB,cAAc;EACd,0BAA0B;AAC5B;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,aAAa;EACb,iBAAiB;EACjB,sBAAsB;EACtB,4CAA4C;AAC9C;AACA;;0DAE0D;AAC1D;EACE,cAAc;EACd,aAAa;EACb,iBAAiB;EACjB,cAAc;EACd,gBAAgB;EAChB,yBAAyB;AAC3B;AACA;EACE,cAAc;EACd,aAAa;EACb,iBAAiB;AACnB;AACA;;0DAE0D;AAC1D;EACE,2CAA2C;EAC3C,iBAAiB;EACjB,WAAW;EACX,aAAa;EACb,eAAe;EACf,qCAAqC;AACvC;AACA;EACE,yBAAyB;EACzB,iBAAiB;EACjB,eAAe;EACf,qCAAqC;EACrC,WAAW;EACX,UAAU;AACZ;AACA;;0DAE0D;AAC1D;EACE,cAAc;EACd,aAAa;AACf;AACA;EACE,cAAc;EACd,aAAa;AACf;AACA;EACE,cAAc;EACd,iBAAiB;AACnB;AACA;;0DAE0D;AAC1D;;EAEE,yBAAyB;EACzB,cAAc;EACd,iBAAiB;EACjB,eAAe;EACf,qCAAqC;EACrC,WAAW;EACX,aAAa;EACb,iBAAiB;EACjB,0BAA0B;AAC5B;AACA;;EAEE,qBAAqB;AACvB;AACA;;0DAE0D;AAC1D;EACE,yBAAyB;EACzB,cAAc;EACd,iBAAiB;EACjB,WAAW;EACX,aAAa;EACb,iBAAiB;EACjB,aAAa;EACb,gBAAgB;AAClB;AACA;EACE,yBAAyB;AAC3B;AACA;EACE,yBAAyB;EACzB,cAAc;AAChB;AACA;EACE,6BAA6B;EAC7B,eAAe;EACf,qBAAqB;EACrB,cAAc;AAChB;AACA;EACE,yBAAyB;EACzB,YAAY;AACd;AACA;;0DAE0D;AAC1D;EACE,2CAA2C;EAC3C,iBAAiB;EACjB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,sCAAsC;AACxC;AACA;EACE,cAAc;EACd,aAAa;EACb,iBAAiB;AACnB;AACA;EACE,cAAc;EACd,aAAa;AACf;AACA;EACE,cAAc;EACd,aAAa;AACf;AACA;;0DAE0D;AAC1D;EACE,yBAAyB;EACzB,cAAc;EACd,mBAAmB;EACnB,wCAAwC;AAC1C;AACA;EACE,cAAc;AAChB;AACA;;0DAE0D;AAC1D;EACE,yBAAyB;EACzB,YAAY;EACZ,iBAAiB;EACjB,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,iBAAiB;EACjB,aAAa;AACf;AACA;EACE,yBAAyB;EACzB,YAAY;EACZ,iBAAiB;EACjB,aAAa;AACf;AACA;;0DAE0D;AAC1D;EACE,eAAe;EACf,oCAAoC;AACtC;AACA;EACE,cAAc;EACd,iBAAiB;EACjB,0CAA0C;AAC5C;AACA;;0DAE0D;AAC1D;EACE,yBAAyB;EACzB,WAAW;AACb;AACA;EACE,cAAc;EACd,iBAAiB;EACjB,iBAAiB;AACnB;AACA;EACE,cAAc;EACd,aAAa;EACb,iBAAiB;EACjB,kBAAkB;EAClB,iBAAiB;AACnB;AACA;EACE,cAAc;EACd,aAAa;EACb,kBAAkB;EAClB,iBAAiB;AACnB","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n\n//// This style applies to all the ActionBars in the application\nActionBar {\n    color: white;\n    background-color: red;\n}\n\n//// This style applies to all the ToolBars in the application\nToolBar {\n    color: white;\n    background-color: gray;\n    bartintcolor: gray;\n}\n\n/* =====================================================\n   ARMIND MDK THEME\n   Cyber Corporate Neon Style\n   ===================================================== */\n/* =====================================================\n   GLOBAL\n   ===================================================== */\nPage {\n  background-color: #1A0828;\n  color: #FFFFFF;\n  font-family: \"Avenir Next\";\n}\nActionBar {\n  background-color: #2E0A47;\n  color: #F7C600;\n  font-size: 20;\n  font-weight: bold;\n  border-bottom-width: 1;\n  border-bottom-color: rgba(247, 198, 0, 0.45);\n}\n/* =====================================================\n   HEADERS\n   ===================================================== */\n.Header {\n  color: #F7C600;\n  font-size: 26;\n  font-weight: bold;\n  margin-top: 12;\n  margin-bottom: 8;\n  text-transform: uppercase;\n}\n.SubHeader {\n  color: #D7C9E8;\n  font-size: 16;\n  margin-bottom: 16;\n}\n/* =====================================================\n   CARDS\n   ===================================================== */\n.Card {\n  background-color: rgba(255, 255, 255, 0.04);\n  border-radius: 16;\n  padding: 14;\n  margin: 10 14;\n  border-width: 1;\n  border-color: rgba(142, 68, 236, 0.3);\n}\n.CardGlow {\n  background-color: #250B3A;\n  border-radius: 18;\n  border-width: 1;\n  border-color: rgba(247, 198, 0, 0.45);\n  padding: 16;\n  margin: 12;\n}\n/* =====================================================\n   TEXT\n   ===================================================== */\n.Label {\n  color: #FFFFFF;\n  font-size: 15;\n}\n.Caption {\n  color: #D9D9D9;\n  font-size: 12;\n}\n.Highlight {\n  color: #F7C600;\n  font-weight: bold;\n}\n/* =====================================================\n   INPUTS\n   ===================================================== */\n.TextField,\n.TextView {\n  background-color: #2A103D;\n  color: #FFFFFF;\n  border-radius: 12;\n  border-width: 1;\n  border-color: rgba(142, 68, 236, 0.4);\n  padding: 12;\n  margin-top: 6;\n  margin-bottom: 12;\n  placeholder-color: #B99AD8;\n}\n.TextField:focus,\n.TextView:focus {\n  border-color: #F7C600;\n}\n/* =====================================================\n   BUTTONS\n   ===================================================== */\n.Button {\n  background-color: #5A189A;\n  color: #FFFFFF;\n  border-radius: 14;\n  padding: 12;\n  font-size: 16;\n  font-weight: bold;\n  margin-top: 8;\n  margin-bottom: 8;\n}\n.Button:pressed {\n  background-color: #8E44EC;\n}\n.PrimaryButton {\n  background-color: #F7C600;\n  color: #14061F;\n}\n.SecondaryButton {\n  background-color: transparent;\n  border-width: 1;\n  border-color: #F7C600;\n  color: #F7C600;\n}\n.DangerButton {\n  background-color: #C62828;\n  color: white;\n}\n/* =====================================================\n   LIST / CRUD ITEMS\n   ===================================================== */\n.ObjectCell {\n  background-color: rgba(255, 255, 255, 0.03);\n  border-radius: 14;\n  margin: 8 10;\n  padding: 10;\n  border-width: 1;\n  border-color: rgba(142, 68, 236, 0.25);\n}\n.ObjectCell-title {\n  color: #FFFFFF;\n  font-size: 17;\n  font-weight: bold;\n}\n.ObjectCell-subtitle {\n  color: #D7C9E8;\n  font-size: 13;\n}\n.ObjectCell-footnote {\n  color: #F7C600;\n  font-size: 12;\n}\n/* =====================================================\n   TAB BAR\n   ===================================================== */\nBottomNavigation {\n  background-color: #2E0A47;\n  color: #D9D9D9;\n  border-top-width: 1;\n  border-top-color: rgba(247, 198, 0, 0.4);\n}\nBottomNavigation .selected {\n  color: #F7C600;\n}\n/* =====================================================\n   STATUS / BADGES\n   ===================================================== */\n.BadgeSuccess {\n  background-color: #00C853;\n  color: white;\n  border-radius: 20;\n  padding: 6 10;\n}\n.BadgeWarning {\n  background-color: #F7C600;\n  color: #14061F;\n  border-radius: 20;\n  padding: 6 10;\n}\n.BadgeOffline {\n  background-color: #B71C1C;\n  color: white;\n  border-radius: 20;\n  padding: 6 10;\n}\n/* =====================================================\n   ANIMATED VISUAL FEEL (SOFT GLOW)\n   ===================================================== */\n.GlowBorder {\n  border-width: 1;\n  border-color: rgba(247, 198, 0, 0.5);\n}\n.NeonText {\n  color: #F7C600;\n  font-weight: bold;\n  text-shadow: 0 0 6 rgba(247, 198, 0, 0.45);\n}\n/* =====================================================\n   LOGIN SCREEN IDEA\n   ===================================================== */\n.LoginContainer {\n  background-color: #1A0828;\n  padding: 24;\n}\n.LoginLogo {\n  margin-top: 40;\n  margin-bottom: 30;\n  alignment: center;\n}\n.LoginTitle {\n  color: #F7C600;\n  font-size: 30;\n  font-weight: bold;\n  text-align: center;\n  margin-bottom: 10;\n}\n.LoginSubtitle {\n  color: #D7C9E8;\n  font-size: 15;\n  text-align: center;\n  margin-bottom: 30;\n}\n"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1432,20 +1645,297 @@ Examples:
 @mdkYellow1: #ffbb33;
 @mdkRed1: #ff0000;
 
-//// By-Type style: All Pages in the application will now have a yellow background
-Page
 
-{ background-color: @mdkYellow1; }
-//// By-Name style: All Buttons with _Name == "BlueButton" will now have this style
-#BlueButton
+//// This style applies to all the ActionBars in the application
+ActionBar {
+    color: white;
+    background-color: red;
+}
 
-{ color: @mdkYellow1; background-color: #0000FF; }
-//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
+//// This style applies to all the ToolBars in the application
+ToolBar {
+    color: white;
+    background-color: gray;
+    bartintcolor: gray;
+}
 
-.MyButton
+/* =====================================================
+   ARMIND MDK THEME
+   Cyber Corporate Neon Style
+   ===================================================== */
 
-{ color: @mdkYellow1; background-color: @mdkRed1; }
-*/`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.less"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/"],"sourceRoot":""}]);
+@brand-purple: #5A189A;
+@brand-purple-dark: #2E0A47;
+@brand-purple-light: #8E44EC;
+
+@brand-yellow: #F7C600;
+@brand-yellow-soft: #FFD93D;
+
+@brand-white: #FFFFFF;
+@brand-gray-light: #D9D9D9;
+@brand-gray: #8F8F8F;
+@brand-black: #14061F;
+
+@background-primary: #1A0828;
+@background-secondary: #250B3A;
+@background-card: rgba(255, 255, 255, 0.04);
+
+@text-primary: #FFFFFF;
+@text-secondary: #D7C9E8;
+@text-highlight: #F7C600;
+
+@border-glow: rgba(247, 198, 0, 0.45);
+
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
+Page {
+    background-color: @background-primary;
+    color: @text-primary;
+    font-family: "Avenir Next";
+}
+
+ActionBar {
+    background-color: @brand-purple-dark;
+    color: @brand-yellow;
+    font-size: 20;
+    font-weight: bold;
+    border-bottom-width: 1;
+    border-bottom-color: @border-glow;
+}
+
+/* =====================================================
+   HEADERS
+   ===================================================== */
+
+.Header {
+    color: @brand-yellow;
+    font-size: 26;
+    font-weight: bold;
+    margin-top: 12;
+    margin-bottom: 8;
+    text-transform: uppercase;
+}
+
+.SubHeader {
+    color: @text-secondary;
+    font-size: 16;
+    margin-bottom: 16;
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.Card {
+    background-color: @background-card;
+    border-radius: 16;
+    padding: 14;
+    margin: 10 14;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 30%);
+}
+
+.CardGlow {
+    background-color: @background-secondary;
+    border-radius: 18;
+    border-width: 1;
+    border-color: @border-glow;
+    padding: 16;
+    margin: 12;
+}
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.Label {
+    color: @text-primary;
+    font-size: 15;
+}
+
+.Caption {
+    color: @brand-gray-light;
+    font-size: 12;
+}
+
+.Highlight {
+    color: @brand-yellow;
+    font-weight: bold;
+}
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+.TextField,
+.TextView {
+    background-color: #2A103D;
+    color: @brand-white;
+    border-radius: 12;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 40%);
+    padding: 12;
+    margin-top: 6;
+    margin-bottom: 12;
+    placeholder-color: #B99AD8;
+}
+
+.TextField:focus,
+.TextView:focus {
+    border-color: @brand-yellow;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.Button {
+    background-color: @brand-purple;
+    color: @brand-white;
+    border-radius: 14;
+    padding: 12;
+    font-size: 16;
+    font-weight: bold;
+    margin-top: 8;
+    margin-bottom: 8;
+}
+
+.Button:pressed {
+    background-color: @brand-purple-light;
+}
+
+.PrimaryButton {
+    background-color: @brand-yellow;
+    color: @brand-black;
+}
+
+.SecondaryButton {
+    background-color: transparent;
+    border-width: 1;
+    border-color: @brand-yellow;
+    color: @brand-yellow;
+}
+
+.DangerButton {
+    background-color: #C62828;
+    color: white;
+}
+
+/* =====================================================
+   LIST / CRUD ITEMS
+   ===================================================== */
+
+.ObjectCell {
+    background-color: rgba(255,255,255,0.03);
+    border-radius: 14;
+    margin: 8 10;
+    padding: 10;
+    border-width: 1;
+    border-color: fade(@brand-purple-light, 25%);
+}
+
+.ObjectCell-title {
+    color: @brand-white;
+    font-size: 17;
+    font-weight: bold;
+}
+
+.ObjectCell-subtitle {
+    color: @text-secondary;
+    font-size: 13;
+}
+
+.ObjectCell-footnote {
+    color: @brand-yellow;
+    font-size: 12;
+}
+
+/* =====================================================
+   TAB BAR
+   ===================================================== */
+
+BottomNavigation {
+    background-color: @brand-purple-dark;
+    color: @brand-gray-light;
+    border-top-width: 1;
+    border-top-color: fade(@brand-yellow, 40%);
+}
+
+BottomNavigation .selected {
+    color: @brand-yellow;
+}
+
+/* =====================================================
+   STATUS / BADGES
+   ===================================================== */
+
+.BadgeSuccess {
+    background-color: #00C853;
+    color: white;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+.BadgeWarning {
+    background-color: @brand-yellow;
+    color: @brand-black;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+.BadgeOffline {
+    background-color: #B71C1C;
+    color: white;
+    border-radius: 20;
+    padding: 6 10;
+}
+
+/* =====================================================
+   ANIMATED VISUAL FEEL (SOFT GLOW)
+   ===================================================== */
+
+.GlowBorder {
+    border-width: 1;
+    border-color: fade(@brand-yellow, 50%);
+}
+
+.NeonText {
+    color: @brand-yellow;
+    font-weight: bold;
+    text-shadow: 0 0 6 fade(@brand-yellow, 45%);
+}
+
+/* =====================================================
+   LOGIN SCREEN IDEA
+   ===================================================== */
+
+.LoginContainer {
+    background-color: @background-primary;
+    padding: 24;
+}
+
+.LoginLogo {
+    margin-top: 40;
+    margin-bottom: 30;
+    alignment: center;
+}
+
+.LoginTitle {
+    color: @brand-yellow;
+    font-size: 30;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10;
+}
+
+.LoginSubtitle {
+    color: @text-secondary;
+    font-size: 15;
+    text-align: center;
+    margin-bottom: 30;
+}`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.less"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;;;0DAwB0D;;AAE1D,sBAAsB;AACtB,2BAA2B;AAC3B,4BAA4B;;AAE5B,sBAAsB;AACtB,2BAA2B;;AAE3B,qBAAqB;AACrB,0BAA0B;AAC1B,oBAAoB;AACpB,qBAAqB;;AAErB,4BAA4B;AAC5B,8BAA8B;AAC9B,2CAA2C;;AAE3C,sBAAsB;AACtB,wBAAwB;AACxB,wBAAwB;;AAExB,qCAAqC;;AAErC;;0DAE0D;;AAE1D;IACI,qCAAqC;IACrC,oBAAoB;IACpB,0BAA0B;AAC9B;;AAEA;IACI,oCAAoC;IACpC,oBAAoB;IACpB,aAAa;IACb,iBAAiB;IACjB,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;;0DAE0D;;AAE1D;IACI,oBAAoB;IACpB,aAAa;IACb,iBAAiB;IACjB,cAAc;IACd,gBAAgB;IAChB,yBAAyB;AAC7B;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,iBAAiB;AACrB;;AAEA;;0DAE0D;;AAE1D;IACI,kCAAkC;IAClC,iBAAiB;IACjB,WAAW;IACX,aAAa;IACb,eAAe;IACf,4CAA4C;AAChD;;AAEA;IACI,uCAAuC;IACvC,iBAAiB;IACjB,eAAe;IACf,0BAA0B;IAC1B,WAAW;IACX,UAAU;AACd;;AAEA;;0DAE0D;;AAE1D;IACI,oBAAoB;IACpB,aAAa;AACjB;;AAEA;IACI,wBAAwB;IACxB,aAAa;AACjB;;AAEA;IACI,oBAAoB;IACpB,iBAAiB;AACrB;;AAEA;;0DAE0D;;AAE1D;;IAEI,yBAAyB;IACzB,mBAAmB;IACnB,iBAAiB;IACjB,eAAe;IACf,4CAA4C;IAC5C,WAAW;IACX,aAAa;IACb,iBAAiB;IACjB,0BAA0B;AAC9B;;AAEA;;IAEI,2BAA2B;AAC/B;;AAEA;;0DAE0D;;AAE1D;IACI,+BAA+B;IAC/B,mBAAmB;IACnB,iBAAiB;IACjB,WAAW;IACX,aAAa;IACb,iBAAiB;IACjB,aAAa;IACb,gBAAgB;AACpB;;AAEA;IACI,qCAAqC;AACzC;;AAEA;IACI,+BAA+B;IAC/B,mBAAmB;AACvB;;AAEA;IACI,6BAA6B;IAC7B,eAAe;IACf,2BAA2B;IAC3B,oBAAoB;AACxB;;AAEA;IACI,yBAAyB;IACzB,YAAY;AAChB;;AAEA;;0DAE0D;;AAE1D;IACI,wCAAwC;IACxC,iBAAiB;IACjB,YAAY;IACZ,WAAW;IACX,eAAe;IACf,4CAA4C;AAChD;;AAEA;IACI,mBAAmB;IACnB,aAAa;IACb,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,aAAa;AACjB;;AAEA;IACI,oBAAoB;IACpB,aAAa;AACjB;;AAEA;;0DAE0D;;AAE1D;IACI,oCAAoC;IACpC,wBAAwB;IACxB,mBAAmB;IACnB,0CAA0C;AAC9C;;AAEA;IACI,oBAAoB;AACxB;;AAEA;;0DAE0D;;AAE1D;IACI,yBAAyB;IACzB,YAAY;IACZ,iBAAiB;IACjB,aAAa;AACjB;;AAEA;IACI,+BAA+B;IAC/B,mBAAmB;IACnB,iBAAiB;IACjB,aAAa;AACjB;;AAEA;IACI,yBAAyB;IACzB,YAAY;IACZ,iBAAiB;IACjB,aAAa;AACjB;;AAEA;;0DAE0D;;AAE1D;IACI,eAAe;IACf,sCAAsC;AAC1C;;AAEA;IACI,oBAAoB;IACpB,iBAAiB;IACjB,2CAA2C;AAC/C;;AAEA;;0DAE0D;;AAE1D;IACI,qCAAqC;IACrC,WAAW;AACf;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,iBAAiB;AACrB;;AAEA;IACI,oBAAoB;IACpB,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,sBAAsB;IACtB,aAAa;IACb,kBAAkB;IAClB,iBAAiB;AACrB","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n\n//// This style applies to all the ActionBars in the application\nActionBar {\n    color: white;\n    background-color: red;\n}\n\n//// This style applies to all the ToolBars in the application\nToolBar {\n    color: white;\n    background-color: gray;\n    bartintcolor: gray;\n}\n\n/* =====================================================\n   ARMIND MDK THEME\n   Cyber Corporate Neon Style\n   ===================================================== */\n\n@brand-purple: #5A189A;\n@brand-purple-dark: #2E0A47;\n@brand-purple-light: #8E44EC;\n\n@brand-yellow: #F7C600;\n@brand-yellow-soft: #FFD93D;\n\n@brand-white: #FFFFFF;\n@brand-gray-light: #D9D9D9;\n@brand-gray: #8F8F8F;\n@brand-black: #14061F;\n\n@background-primary: #1A0828;\n@background-secondary: #250B3A;\n@background-card: rgba(255, 255, 255, 0.04);\n\n@text-primary: #FFFFFF;\n@text-secondary: #D7C9E8;\n@text-highlight: #F7C600;\n\n@border-glow: rgba(247, 198, 0, 0.45);\n\n/* =====================================================\n   GLOBAL\n   ===================================================== */\n\nPage {\n    background-color: @background-primary;\n    color: @text-primary;\n    font-family: \"Avenir Next\";\n}\n\nActionBar {\n    background-color: @brand-purple-dark;\n    color: @brand-yellow;\n    font-size: 20;\n    font-weight: bold;\n    border-bottom-width: 1;\n    border-bottom-color: @border-glow;\n}\n\n/* =====================================================\n   HEADERS\n   ===================================================== */\n\n.Header {\n    color: @brand-yellow;\n    font-size: 26;\n    font-weight: bold;\n    margin-top: 12;\n    margin-bottom: 8;\n    text-transform: uppercase;\n}\n\n.SubHeader {\n    color: @text-secondary;\n    font-size: 16;\n    margin-bottom: 16;\n}\n\n/* =====================================================\n   CARDS\n   ===================================================== */\n\n.Card {\n    background-color: @background-card;\n    border-radius: 16;\n    padding: 14;\n    margin: 10 14;\n    border-width: 1;\n    border-color: fade(@brand-purple-light, 30%);\n}\n\n.CardGlow {\n    background-color: @background-secondary;\n    border-radius: 18;\n    border-width: 1;\n    border-color: @border-glow;\n    padding: 16;\n    margin: 12;\n}\n\n/* =====================================================\n   TEXT\n   ===================================================== */\n\n.Label {\n    color: @text-primary;\n    font-size: 15;\n}\n\n.Caption {\n    color: @brand-gray-light;\n    font-size: 12;\n}\n\n.Highlight {\n    color: @brand-yellow;\n    font-weight: bold;\n}\n\n/* =====================================================\n   INPUTS\n   ===================================================== */\n\n.TextField,\n.TextView {\n    background-color: #2A103D;\n    color: @brand-white;\n    border-radius: 12;\n    border-width: 1;\n    border-color: fade(@brand-purple-light, 40%);\n    padding: 12;\n    margin-top: 6;\n    margin-bottom: 12;\n    placeholder-color: #B99AD8;\n}\n\n.TextField:focus,\n.TextView:focus {\n    border-color: @brand-yellow;\n}\n\n/* =====================================================\n   BUTTONS\n   ===================================================== */\n\n.Button {\n    background-color: @brand-purple;\n    color: @brand-white;\n    border-radius: 14;\n    padding: 12;\n    font-size: 16;\n    font-weight: bold;\n    margin-top: 8;\n    margin-bottom: 8;\n}\n\n.Button:pressed {\n    background-color: @brand-purple-light;\n}\n\n.PrimaryButton {\n    background-color: @brand-yellow;\n    color: @brand-black;\n}\n\n.SecondaryButton {\n    background-color: transparent;\n    border-width: 1;\n    border-color: @brand-yellow;\n    color: @brand-yellow;\n}\n\n.DangerButton {\n    background-color: #C62828;\n    color: white;\n}\n\n/* =====================================================\n   LIST / CRUD ITEMS\n   ===================================================== */\n\n.ObjectCell {\n    background-color: rgba(255,255,255,0.03);\n    border-radius: 14;\n    margin: 8 10;\n    padding: 10;\n    border-width: 1;\n    border-color: fade(@brand-purple-light, 25%);\n}\n\n.ObjectCell-title {\n    color: @brand-white;\n    font-size: 17;\n    font-weight: bold;\n}\n\n.ObjectCell-subtitle {\n    color: @text-secondary;\n    font-size: 13;\n}\n\n.ObjectCell-footnote {\n    color: @brand-yellow;\n    font-size: 12;\n}\n\n/* =====================================================\n   TAB BAR\n   ===================================================== */\n\nBottomNavigation {\n    background-color: @brand-purple-dark;\n    color: @brand-gray-light;\n    border-top-width: 1;\n    border-top-color: fade(@brand-yellow, 40%);\n}\n\nBottomNavigation .selected {\n    color: @brand-yellow;\n}\n\n/* =====================================================\n   STATUS / BADGES\n   ===================================================== */\n\n.BadgeSuccess {\n    background-color: #00C853;\n    color: white;\n    border-radius: 20;\n    padding: 6 10;\n}\n\n.BadgeWarning {\n    background-color: @brand-yellow;\n    color: @brand-black;\n    border-radius: 20;\n    padding: 6 10;\n}\n\n.BadgeOffline {\n    background-color: #B71C1C;\n    color: white;\n    border-radius: 20;\n    padding: 6 10;\n}\n\n/* =====================================================\n   ANIMATED VISUAL FEEL (SOFT GLOW)\n   ===================================================== */\n\n.GlowBorder {\n    border-width: 1;\n    border-color: fade(@brand-yellow, 50%);\n}\n\n.NeonText {\n    color: @brand-yellow;\n    font-weight: bold;\n    text-shadow: 0 0 6 fade(@brand-yellow, 45%);\n}\n\n/* =====================================================\n   LOGIN SCREEN IDEA\n   ===================================================== */\n\n.LoginContainer {\n    background-color: @background-primary;\n    padding: 24;\n}\n\n.LoginLogo {\n    margin-top: 40;\n    margin-bottom: 30;\n    alignment: center;\n}\n\n.LoginTitle {\n    color: @brand-yellow;\n    font-size: 30;\n    font-weight: bold;\n    text-align: center;\n    margin-bottom: 10;\n}\n\n.LoginSubtitle {\n    color: @text-secondary;\n    font-size: 15;\n    text-align: center;\n    margin-bottom: 30;\n}"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1463,7 +1953,183 @@ var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/api.js */ "../../../../css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `.ns-light Page {
+	background-color: #1A0828;
+	color: #FFFFFF;
+	font-family: "Avenir Next";
+}
+.ns-light ActionBar {
+	background-color: #2E0A47;
+	color: #F7C600;
+	font-size: 20;
+	font-weight: bold;
+	border-bottom-width: 1;
+	border-bottom-color: rgba(247, 198, 0, 0.45);
+}
+.ns-light .Header {
+	color: #F7C600;
+	font-size: 26;
+	font-weight: bold;
+	margin-top: 12;
+	margin-bottom: 8;
+	text-transform: uppercase;
+}
+.ns-light .SubHeader {
+	color: #D7C9E8;
+	font-size: 16;
+	margin-bottom: 16;
+}
+.ns-light .Card {
+	background-color: rgba(255, 255, 255, 0.04);
+	border-radius: 16;
+	padding: 14;
+	margin: 10 14;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.3);
+}
+.ns-light .CardGlow {
+	background-color: #250B3A;
+	border-radius: 18;
+	border-width: 1;
+	border-color: rgba(247, 198, 0, 0.45);
+	padding: 16;
+	margin: 12;
+}
+.ns-light .Label {
+	color: #FFFFFF;
+	font-size: 15;
+}
+.ns-light .Caption {
+	color: #D9D9D9;
+	font-size: 12;
+}
+.ns-light .Highlight {
+	color: #F7C600;
+	font-weight: bold;
+}
+.ns-light .TextField,
+.TextView {
+	background-color: #2A103D;
+	color: #FFFFFF;
+	border-radius: 12;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.4);
+	padding: 12;
+	margin-top: 6;
+	margin-bottom: 12;
+	placeholder-color: #B99AD8;
+}
+.ns-light .TextField:focus,
+.TextView:focus {
+	border-color: #F7C600;
+}
+.ns-light .Button {
+	background-color: #5A189A;
+	color: #FFFFFF;
+	border-radius: 14;
+	padding: 12;
+	font-size: 16;
+	font-weight: bold;
+	margin-top: 8;
+	margin-bottom: 8;
+}
+.ns-light .Button:pressed {
+	background-color: #8E44EC;
+}
+.ns-light .PrimaryButton {
+	background-color: #F7C600;
+	color: #14061F;
+}
+.ns-light .SecondaryButton {
+	background-color: transparent;
+	border-width: 1;
+	border-color: #F7C600;
+	color: #F7C600;
+}
+.ns-light .DangerButton {
+	background-color: #C62828;
+	color: white;
+}
+.ns-light .ObjectCell {
+	background-color: rgba(255, 255, 255, 0.03);
+	border-radius: 14;
+	margin: 8 10;
+	padding: 10;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.25);
+}
+.ns-light .ObjectCell-title {
+	color: #FFFFFF;
+	font-size: 17;
+	font-weight: bold;
+}
+.ns-light .ObjectCell-subtitle {
+	color: #D7C9E8;
+	font-size: 13;
+}
+.ns-light .ObjectCell-footnote {
+	color: #F7C600;
+	font-size: 12;
+}
+.ns-light BottomNavigation {
+	background-color: #2E0A47;
+	color: #D9D9D9;
+	border-top-width: 1;
+	border-top-color: rgba(247, 198, 0, 0.4);
+}
+.ns-light BottomNavigation .selected {
+	color: #F7C600;
+}
+.ns-light .BadgeSuccess {
+	background-color: #00C853;
+	color: white;
+	border-radius: 20;
+	padding: 6 10;
+}
+.ns-light .BadgeWarning {
+	background-color: #F7C600;
+	color: #14061F;
+	border-radius: 20;
+	padding: 6 10;
+}
+.ns-light .BadgeOffline {
+	background-color: #B71C1C;
+	color: white;
+	border-radius: 20;
+	padding: 6 10;
+}
+.ns-light .GlowBorder {
+	border-width: 1;
+	border-color: rgba(247, 198, 0, 0.5);
+}
+.ns-light .NeonText {
+	color: #F7C600;
+	font-weight: bold;
+	text-shadow: 0 0 6 rgba(247, 198, 0, 0.45);
+}
+.ns-light .LoginContainer {
+	background-color: #1A0828;
+	padding: 24;
+}
+.ns-light .LoginLogo {
+	margin-top: 40;
+	margin-bottom: 30;
+	alignment: center;
+}
+.ns-light .LoginTitle {
+	color: #F7C600;
+	font-size: 30;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 10;
+}
+.ns-light .LoginSubtitle {
+	color: #D7C9E8;
+	font-size: 15;
+	text-align: center;
+	margin-bottom: 30;
+}
+`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.light.css"],"names":[],"mappings":"AAAA;CACC,yBAAyB;CACzB,cAAc;CACd,0BAA0B;AAC3B;AACA;CACC,yBAAyB;CACzB,cAAc;CACd,aAAa;CACb,iBAAiB;CACjB,sBAAsB;CACtB,4CAA4C;AAC7C;AACA;CACC,cAAc;CACd,aAAa;CACb,iBAAiB;CACjB,cAAc;CACd,gBAAgB;CAChB,yBAAyB;AAC1B;AACA;CACC,cAAc;CACd,aAAa;CACb,iBAAiB;AAClB;AACA;CACC,2CAA2C;CAC3C,iBAAiB;CACjB,WAAW;CACX,aAAa;CACb,eAAe;CACf,qCAAqC;AACtC;AACA;CACC,yBAAyB;CACzB,iBAAiB;CACjB,eAAe;CACf,qCAAqC;CACrC,WAAW;CACX,UAAU;AACX;AACA;CACC,cAAc;CACd,aAAa;AACd;AACA;CACC,cAAc;CACd,aAAa;AACd;AACA;CACC,cAAc;CACd,iBAAiB;AAClB;AACA;;CAEC,yBAAyB;CACzB,cAAc;CACd,iBAAiB;CACjB,eAAe;CACf,qCAAqC;CACrC,WAAW;CACX,aAAa;CACb,iBAAiB;CACjB,0BAA0B;AAC3B;AACA;;CAEC,qBAAqB;AACtB;AACA;CACC,yBAAyB;CACzB,cAAc;CACd,iBAAiB;CACjB,WAAW;CACX,aAAa;CACb,iBAAiB;CACjB,aAAa;CACb,gBAAgB;AACjB;AACA;CACC,yBAAyB;AAC1B;AACA;CACC,yBAAyB;CACzB,cAAc;AACf;AACA;CACC,6BAA6B;CAC7B,eAAe;CACf,qBAAqB;CACrB,cAAc;AACf;AACA;CACC,yBAAyB;CACzB,YAAY;AACb;AACA;CACC,2CAA2C;CAC3C,iBAAiB;CACjB,YAAY;CACZ,WAAW;CACX,eAAe;CACf,sCAAsC;AACvC;AACA;CACC,cAAc;CACd,aAAa;CACb,iBAAiB;AAClB;AACA;CACC,cAAc;CACd,aAAa;AACd;AACA;CACC,cAAc;CACd,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,cAAc;CACd,mBAAmB;CACnB,wCAAwC;AACzC;AACA;CACC,cAAc;AACf;AACA;CACC,yBAAyB;CACzB,YAAY;CACZ,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,cAAc;CACd,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,YAAY;CACZ,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,eAAe;CACf,oCAAoC;AACrC;AACA;CACC,cAAc;CACd,iBAAiB;CACjB,0CAA0C;AAC3C;AACA;CACC,yBAAyB;CACzB,WAAW;AACZ;AACA;CACC,cAAc;CACd,iBAAiB;CACjB,iBAAiB;AAClB;AACA;CACC,cAAc;CACd,aAAa;CACb,iBAAiB;CACjB,kBAAkB;CAClB,iBAAiB;AAClB;AACA;CACC,cAAc;CACd,aAAa;CACb,kBAAkB;CAClB,iBAAiB;AAClB","sourcesContent":[".ns-light Page {\n\tbackground-color: #1A0828;\n\tcolor: #FFFFFF;\n\tfont-family: \"Avenir Next\";\n}\n.ns-light ActionBar {\n\tbackground-color: #2E0A47;\n\tcolor: #F7C600;\n\tfont-size: 20;\n\tfont-weight: bold;\n\tborder-bottom-width: 1;\n\tborder-bottom-color: rgba(247, 198, 0, 0.45);\n}\n.ns-light .Header {\n\tcolor: #F7C600;\n\tfont-size: 26;\n\tfont-weight: bold;\n\tmargin-top: 12;\n\tmargin-bottom: 8;\n\ttext-transform: uppercase;\n}\n.ns-light .SubHeader {\n\tcolor: #D7C9E8;\n\tfont-size: 16;\n\tmargin-bottom: 16;\n}\n.ns-light .Card {\n\tbackground-color: rgba(255, 255, 255, 0.04);\n\tborder-radius: 16;\n\tpadding: 14;\n\tmargin: 10 14;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.3);\n}\n.ns-light .CardGlow {\n\tbackground-color: #250B3A;\n\tborder-radius: 18;\n\tborder-width: 1;\n\tborder-color: rgba(247, 198, 0, 0.45);\n\tpadding: 16;\n\tmargin: 12;\n}\n.ns-light .Label {\n\tcolor: #FFFFFF;\n\tfont-size: 15;\n}\n.ns-light .Caption {\n\tcolor: #D9D9D9;\n\tfont-size: 12;\n}\n.ns-light .Highlight {\n\tcolor: #F7C600;\n\tfont-weight: bold;\n}\n.ns-light .TextField,\n.TextView {\n\tbackground-color: #2A103D;\n\tcolor: #FFFFFF;\n\tborder-radius: 12;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.4);\n\tpadding: 12;\n\tmargin-top: 6;\n\tmargin-bottom: 12;\n\tplaceholder-color: #B99AD8;\n}\n.ns-light .TextField:focus,\n.TextView:focus {\n\tborder-color: #F7C600;\n}\n.ns-light .Button {\n\tbackground-color: #5A189A;\n\tcolor: #FFFFFF;\n\tborder-radius: 14;\n\tpadding: 12;\n\tfont-size: 16;\n\tfont-weight: bold;\n\tmargin-top: 8;\n\tmargin-bottom: 8;\n}\n.ns-light .Button:pressed {\n\tbackground-color: #8E44EC;\n}\n.ns-light .PrimaryButton {\n\tbackground-color: #F7C600;\n\tcolor: #14061F;\n}\n.ns-light .SecondaryButton {\n\tbackground-color: transparent;\n\tborder-width: 1;\n\tborder-color: #F7C600;\n\tcolor: #F7C600;\n}\n.ns-light .DangerButton {\n\tbackground-color: #C62828;\n\tcolor: white;\n}\n.ns-light .ObjectCell {\n\tbackground-color: rgba(255, 255, 255, 0.03);\n\tborder-radius: 14;\n\tmargin: 8 10;\n\tpadding: 10;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.25);\n}\n.ns-light .ObjectCell-title {\n\tcolor: #FFFFFF;\n\tfont-size: 17;\n\tfont-weight: bold;\n}\n.ns-light .ObjectCell-subtitle {\n\tcolor: #D7C9E8;\n\tfont-size: 13;\n}\n.ns-light .ObjectCell-footnote {\n\tcolor: #F7C600;\n\tfont-size: 12;\n}\n.ns-light BottomNavigation {\n\tbackground-color: #2E0A47;\n\tcolor: #D9D9D9;\n\tborder-top-width: 1;\n\tborder-top-color: rgba(247, 198, 0, 0.4);\n}\n.ns-light BottomNavigation .selected {\n\tcolor: #F7C600;\n}\n.ns-light .BadgeSuccess {\n\tbackground-color: #00C853;\n\tcolor: white;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\n.ns-light .BadgeWarning {\n\tbackground-color: #F7C600;\n\tcolor: #14061F;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\n.ns-light .BadgeOffline {\n\tbackground-color: #B71C1C;\n\tcolor: white;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\n.ns-light .GlowBorder {\n\tborder-width: 1;\n\tborder-color: rgba(247, 198, 0, 0.5);\n}\n.ns-light .NeonText {\n\tcolor: #F7C600;\n\tfont-weight: bold;\n\ttext-shadow: 0 0 6 rgba(247, 198, 0, 0.45);\n}\n.ns-light .LoginContainer {\n\tbackground-color: #1A0828;\n\tpadding: 24;\n}\n.ns-light .LoginLogo {\n\tmargin-top: 40;\n\tmargin-bottom: 30;\n\talignment: center;\n}\n.ns-light .LoginTitle {\n\tcolor: #F7C600;\n\tfont-size: 30;\n\tfont-weight: bold;\n\ttext-align: center;\n\tmargin-bottom: 10;\n}\n.ns-light .LoginSubtitle {\n\tcolor: #D7C9E8;\n\tfont-size: 15;\n\ttext-align: center;\n\tmargin-bottom: 30;\n}\n"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1481,7 +2147,185 @@ var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../css-loader/dist/runtime/api.js */ "../../../../css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ``, "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, `@brand-purple: #5A189A;
+@brand-purple-dark: #2E0A47;
+@brand-purple-light: #8E44EC;
+@brand-yellow: #F7C600;
+@brand-yellow-soft: #FFD93D;
+@brand-white: #FFFFFF;
+@brand-gray-light: #D9D9D9;
+@brand-gray: #8F8F8F;
+@brand-black: #14061F;
+@background-primary: #1A0828;
+@background-secondary: #250B3A;
+@background-card: rgba(255, 255, 255, 0.04);
+@text-primary: #FFFFFF;
+@text-secondary: #D7C9E8;
+@text-highlight: #F7C600;
+@border-glow: rgba(247, 198, 0, 0.45);
+ActionBar {
+	background-color: #2E0A47;
+	font-color: #F7C600;
+	font-size: 20;
+	font-weight: bold;
+	border-bottom-width: 1;
+	border-bottom-color: rgba(247, 198, 0, 0.45);
+}
+Header {
+	font-color: #F7C600;
+	font-size: 26;
+	font-weight: bold;
+	margin-top: 12;
+	margin-bottom: 8;
+	text-transform: uppercase;
+}
+SubHeader {
+	font-color: #D7C9E8;
+	font-size: 16;
+	margin-bottom: 16;
+}
+Card {
+	background-color: rgba(255, 255, 255, 0.04);
+	border-radius: 16;
+	padding: 14;
+	margin: 10 14;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.3);
+}
+CardGlow {
+	background-color: #250B3A;
+	border-radius: 18;
+	border-width: 1;
+	border-color: rgba(247, 198, 0, 0.45);
+	padding: 16;
+	margin: 12;
+}
+Label {
+	font-color: #FFFFFF;
+	font-size: 15;
+}
+Caption {
+	font-color: #D9D9D9;
+	font-size: 12;
+}
+Highlight {
+	font-color: #F7C600;
+	font-weight: bold;
+}
+TextField,
+.TextView {
+	background-color: #2A103D;
+	font-color: #FFFFFF;
+	border-radius: 12;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.4);
+	padding: 12;
+	margin-top: 6;
+	margin-bottom: 12;
+	placeholder-color: #B99AD8;
+}
+TextField:focus,
+.TextView:focus {
+	border-color: #F7C600;
+}
+Button {
+	background-color: #5A189A;
+	font-color: #FFFFFF;
+	border-radius: 14;
+	padding: 12;
+	font-size: 16;
+	font-weight: bold;
+	margin-top: 8;
+	margin-bottom: 8;
+}
+Button:pressed {
+	background-color: #8E44EC;
+}
+PrimaryButton {
+	background-color: #F7C600;
+	font-color: #14061F;
+}
+SecondaryButton {
+	background-color: transparent;
+	border-width: 1;
+	border-color: #F7C600;
+	font-color: #F7C600;
+}
+DangerButton {
+	background-color: #C62828;
+	font-color: white;
+}
+ObjectCell {
+	background-color: rgba(255, 255, 255, 0.03);
+	border-radius: 14;
+	margin: 8 10;
+	padding: 10;
+	border-width: 1;
+	border-color: rgba(142, 68, 236, 0.25);
+}
+ObjectCell-title {
+	font-color: #FFFFFF;
+	font-size: 17;
+	font-weight: bold;
+}
+ObjectCell-subtitle {
+	font-color: #D7C9E8;
+	font-size: 13;
+}
+ObjectCell-footnote {
+	font-color: #F7C600;
+	font-size: 12;
+}
+BadgeSuccess {
+	background-color: #00C853;
+	font-color: white;
+	border-radius: 20;
+	padding: 6 10;
+}
+BadgeWarning {
+	background-color: #F7C600;
+	font-color: #14061F;
+	border-radius: 20;
+	padding: 6 10;
+}
+BadgeOffline {
+	background-color: #B71C1C;
+	font-color: white;
+	border-radius: 20;
+	padding: 6 10;
+}
+GlowBorder {
+	border-width: 1;
+	border-color: rgba(247, 198, 0, 0.5);
+}
+NeonText {
+	font-color: #F7C600;
+	font-weight: bold;
+	text-shadow: 0 0 6 rgba(247, 198, 0, 0.45);
+}
+LoginContainer {
+	background-color: #1A0828;
+	padding: 24;
+}
+LoginLogo {
+	margin-top: 40;
+	margin-bottom: 30;
+	alignment: center;
+}
+LoginTitle {
+	font-color: #F7C600;
+	font-size: 30;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 10;
+}
+LoginSubtitle {
+	font-color: #D7C9E8;
+	font-size: 15;
+	text-align: center;
+	margin-bottom: 30;
+}
+`, "",{"version":3,"sources":["webpack://./build.definitions/DanielMDKDemo/Styles/Styles.light.nss"],"names":[],"mappings":"AAAA,sBAAsB;AACtB,2BAA2B;AAC3B,4BAA4B;AAC5B,sBAAsB;AACtB,2BAA2B;AAC3B,qBAAqB;AACrB,0BAA0B;AAC1B,oBAAoB;AACpB,qBAAqB;AACrB,4BAA4B;AAC5B,8BAA8B;AAC9B,2CAA2C;AAC3C,sBAAsB;AACtB,wBAAwB;AACxB,wBAAwB;AACxB,qCAAqC;AACrC;CACC,yBAAyB;CACzB,mBAAmB;CACnB,aAAa;CACb,iBAAiB;CACjB,sBAAsB;CACtB,4CAA4C;AAC7C;AACA;CACC,mBAAmB;CACnB,aAAa;CACb,iBAAiB;CACjB,cAAc;CACd,gBAAgB;CAChB,yBAAyB;AAC1B;AACA;CACC,mBAAmB;CACnB,aAAa;CACb,iBAAiB;AAClB;AACA;CACC,2CAA2C;CAC3C,iBAAiB;CACjB,WAAW;CACX,aAAa;CACb,eAAe;CACf,qCAAqC;AACtC;AACA;CACC,yBAAyB;CACzB,iBAAiB;CACjB,eAAe;CACf,qCAAqC;CACrC,WAAW;CACX,UAAU;AACX;AACA;CACC,mBAAmB;CACnB,aAAa;AACd;AACA;CACC,mBAAmB;CACnB,aAAa;AACd;AACA;CACC,mBAAmB;CACnB,iBAAiB;AAClB;AACA;;CAEC,yBAAyB;CACzB,mBAAmB;CACnB,iBAAiB;CACjB,eAAe;CACf,qCAAqC;CACrC,WAAW;CACX,aAAa;CACb,iBAAiB;CACjB,0BAA0B;AAC3B;AACA;;CAEC,qBAAqB;AACtB;AACA;CACC,yBAAyB;CACzB,mBAAmB;CACnB,iBAAiB;CACjB,WAAW;CACX,aAAa;CACb,iBAAiB;CACjB,aAAa;CACb,gBAAgB;AACjB;AACA;CACC,yBAAyB;AAC1B;AACA;CACC,yBAAyB;CACzB,mBAAmB;AACpB;AACA;CACC,6BAA6B;CAC7B,eAAe;CACf,qBAAqB;CACrB,mBAAmB;AACpB;AACA;CACC,yBAAyB;CACzB,iBAAiB;AAClB;AACA;CACC,2CAA2C;CAC3C,iBAAiB;CACjB,YAAY;CACZ,WAAW;CACX,eAAe;CACf,sCAAsC;AACvC;AACA;CACC,mBAAmB;CACnB,aAAa;CACb,iBAAiB;AAClB;AACA;CACC,mBAAmB;CACnB,aAAa;AACd;AACA;CACC,mBAAmB;CACnB,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,iBAAiB;CACjB,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,mBAAmB;CACnB,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,yBAAyB;CACzB,iBAAiB;CACjB,iBAAiB;CACjB,aAAa;AACd;AACA;CACC,eAAe;CACf,oCAAoC;AACrC;AACA;CACC,mBAAmB;CACnB,iBAAiB;CACjB,0CAA0C;AAC3C;AACA;CACC,yBAAyB;CACzB,WAAW;AACZ;AACA;CACC,cAAc;CACd,iBAAiB;CACjB,iBAAiB;AAClB;AACA;CACC,mBAAmB;CACnB,aAAa;CACb,iBAAiB;CACjB,kBAAkB;CAClB,iBAAiB;AAClB;AACA;CACC,mBAAmB;CACnB,aAAa;CACb,kBAAkB;CAClB,iBAAiB;AAClB","sourcesContent":["@brand-purple: #5A189A;\n@brand-purple-dark: #2E0A47;\n@brand-purple-light: #8E44EC;\n@brand-yellow: #F7C600;\n@brand-yellow-soft: #FFD93D;\n@brand-white: #FFFFFF;\n@brand-gray-light: #D9D9D9;\n@brand-gray: #8F8F8F;\n@brand-black: #14061F;\n@background-primary: #1A0828;\n@background-secondary: #250B3A;\n@background-card: rgba(255, 255, 255, 0.04);\n@text-primary: #FFFFFF;\n@text-secondary: #D7C9E8;\n@text-highlight: #F7C600;\n@border-glow: rgba(247, 198, 0, 0.45);\nActionBar {\n\tbackground-color: #2E0A47;\n\tfont-color: #F7C600;\n\tfont-size: 20;\n\tfont-weight: bold;\n\tborder-bottom-width: 1;\n\tborder-bottom-color: rgba(247, 198, 0, 0.45);\n}\nHeader {\n\tfont-color: #F7C600;\n\tfont-size: 26;\n\tfont-weight: bold;\n\tmargin-top: 12;\n\tmargin-bottom: 8;\n\ttext-transform: uppercase;\n}\nSubHeader {\n\tfont-color: #D7C9E8;\n\tfont-size: 16;\n\tmargin-bottom: 16;\n}\nCard {\n\tbackground-color: rgba(255, 255, 255, 0.04);\n\tborder-radius: 16;\n\tpadding: 14;\n\tmargin: 10 14;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.3);\n}\nCardGlow {\n\tbackground-color: #250B3A;\n\tborder-radius: 18;\n\tborder-width: 1;\n\tborder-color: rgba(247, 198, 0, 0.45);\n\tpadding: 16;\n\tmargin: 12;\n}\nLabel {\n\tfont-color: #FFFFFF;\n\tfont-size: 15;\n}\nCaption {\n\tfont-color: #D9D9D9;\n\tfont-size: 12;\n}\nHighlight {\n\tfont-color: #F7C600;\n\tfont-weight: bold;\n}\nTextField,\n.TextView {\n\tbackground-color: #2A103D;\n\tfont-color: #FFFFFF;\n\tborder-radius: 12;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.4);\n\tpadding: 12;\n\tmargin-top: 6;\n\tmargin-bottom: 12;\n\tplaceholder-color: #B99AD8;\n}\nTextField:focus,\n.TextView:focus {\n\tborder-color: #F7C600;\n}\nButton {\n\tbackground-color: #5A189A;\n\tfont-color: #FFFFFF;\n\tborder-radius: 14;\n\tpadding: 12;\n\tfont-size: 16;\n\tfont-weight: bold;\n\tmargin-top: 8;\n\tmargin-bottom: 8;\n}\nButton:pressed {\n\tbackground-color: #8E44EC;\n}\nPrimaryButton {\n\tbackground-color: #F7C600;\n\tfont-color: #14061F;\n}\nSecondaryButton {\n\tbackground-color: transparent;\n\tborder-width: 1;\n\tborder-color: #F7C600;\n\tfont-color: #F7C600;\n}\nDangerButton {\n\tbackground-color: #C62828;\n\tfont-color: white;\n}\nObjectCell {\n\tbackground-color: rgba(255, 255, 255, 0.03);\n\tborder-radius: 14;\n\tmargin: 8 10;\n\tpadding: 10;\n\tborder-width: 1;\n\tborder-color: rgba(142, 68, 236, 0.25);\n}\nObjectCell-title {\n\tfont-color: #FFFFFF;\n\tfont-size: 17;\n\tfont-weight: bold;\n}\nObjectCell-subtitle {\n\tfont-color: #D7C9E8;\n\tfont-size: 13;\n}\nObjectCell-footnote {\n\tfont-color: #F7C600;\n\tfont-size: 12;\n}\nBadgeSuccess {\n\tbackground-color: #00C853;\n\tfont-color: white;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\nBadgeWarning {\n\tbackground-color: #F7C600;\n\tfont-color: #14061F;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\nBadgeOffline {\n\tbackground-color: #B71C1C;\n\tfont-color: white;\n\tborder-radius: 20;\n\tpadding: 6 10;\n}\nGlowBorder {\n\tborder-width: 1;\n\tborder-color: rgba(247, 198, 0, 0.5);\n}\nNeonText {\n\tfont-color: #F7C600;\n\tfont-weight: bold;\n\ttext-shadow: 0 0 6 rgba(247, 198, 0, 0.45);\n}\nLoginContainer {\n\tbackground-color: #1A0828;\n\tpadding: 24;\n}\nLoginLogo {\n\tmargin-top: 40;\n\tmargin-bottom: 30;\n\talignment: center;\n}\nLoginTitle {\n\tfont-color: #F7C600;\n\tfont-size: 30;\n\tfont-weight: bold;\n\ttext-align: center;\n\tmargin-bottom: 10;\n}\nLoginSubtitle {\n\tfont-color: #D7C9E8;\n\tfont-size: 15;\n\ttext-align: center;\n\tmargin-bottom: 30;\n}\n"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1665,7 +2509,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
   \*********************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"FilterFeedbackBar":{"ShowAllFilters":false,"_Type":"Control.Type.FilterFeedbackBar"},"_Name":"SectionedTable0","_Type":"Control.Type.SectionedTable","Sections":[{"Header":{"_Name":"SectionHeader_com_sap_edm_sampleservice_v4","AccessoryType":"None","UseTopPadding":true,"Caption":"com_sap_edm_sampleservice_v4","_Type":"SectionCommon.Type.Header"},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Buttons":[{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Customers/NavToCustomers_List.action","Alignment":"Center","Title":"Customers","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/ProductCategories/NavToProductCategories_List.action","Alignment":"Center","Title":"ProductCategories","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Products/NavToProducts_List.action","Alignment":"Center","Title":"Products","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/ProductTexts/NavToProductTexts_List.action","Alignment":"Center","Title":"ProductTexts","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action","Alignment":"Center","Title":"PurchaseOrderHeaders","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/PurchaseOrderItems/NavToPurchaseOrderItems_List.action","Alignment":"Center","Title":"PurchaseOrderItems","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/SalesOrderHeaders/NavToSalesOrderHeaders_List.action","Alignment":"Center","Title":"SalesOrderHeaders","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/SalesOrderItems/NavToSalesOrderItems_List.action","Alignment":"Center","Title":"SalesOrderItems","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Stock/NavToStock_List.action","Alignment":"Center","Title":"Stock","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Suppliers/NavToSuppliers_List.action","Alignment":"Center","Title":"Suppliers","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"}],"_Name":"SectionButtonTable_com_sap_edm_sampleservice_v4","_Type":"Section.Type.ButtonTable"}]}],"_Name":"Main","_Type":"Page","ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"User Menu","Icon":"sap-icon://customer","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DanielMDKDemo/Actions/Application/UserMenuPopover.action","_Type":"Control.Type.ActionBarItem"}],"_Name":"ActionBar1","Caption":"Main","PreferredCaptionSize":"Large","_Type":"Control.Type.ActionBar"}}
+module.exports = {"Controls":[{"FilterFeedbackBar":{"ShowAllFilters":false,"_Type":"Control.Type.FilterFeedbackBar"},"_Name":"SectionedTable0","_Type":"Control.Type.SectionedTable","Sections":[{"Header":{"_Name":"SectionHeader_com_sap_edm_sampleservice_v4","AccessoryType":"None","UseTopPadding":true,"Caption":"com_sap_edm_sampleservice_v4","_Type":"SectionCommon.Type.Header"},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Buttons":[{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Customers/NavToCustomers_List.action","Alignment":"Left","Title":"Customers","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/ProductCategories/NavToProductCategories_List.action","Alignment":"Center","Title":"ProductCategories","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Products/NavToProducts_List.action","Alignment":"Center","Title":"Products","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/ProductTexts/NavToProductTexts_List.action","Alignment":"Center","Title":"ProductTexts","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action","Alignment":"Center","Title":"PurchaseOrderHeaders","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/PurchaseOrderItems/NavToPurchaseOrderItems_List.action","Alignment":"Center","Title":"PurchaseOrderItems","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/SalesOrderHeaders/NavToSalesOrderHeaders_List.action","Alignment":"Center","Title":"SalesOrderHeaders","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/SalesOrderItems/NavToSalesOrderItems_List.action","Alignment":"Center","Title":"SalesOrderItems","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Stock/NavToStock_List.action","Alignment":"Center","Title":"Stock","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"},{"OnPress":"/DanielMDKDemo/Actions/com_sap_edm_sampleservice_v4/Suppliers/NavToSuppliers_List.action","Alignment":"Center","Title":"Suppliers","ButtonType":"Text","Semantic":"Tint","_Type":"ButtonTable.Type.Button"}],"_Name":"SectionButtonTable_com_sap_edm_sampleservice_v4","_Type":"Section.Type.ButtonTable"}]}],"_Name":"Main","_Type":"Page","ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"User Menu","Icon":"sap-icon://customer","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DanielMDKDemo/Actions/Application/UserMenuPopover.action","_Type":"Control.Type.ActionBarItem"}],"_Name":"ActionBar1","Caption":"Main","PreferredCaptionSize":"Large","_Type":"Control.Type.ActionBar"}}
 
 /***/ }),
 
@@ -3618,7 +4462,7 @@ __webpack_require__.d(exports, {
 /***/ ((module) => {
 
 "use strict";
-module.exports = {};
+module.exports = /*#__PURE__*/JSON.parse('{"ActionBar":{"background-color":"#2E0A47","font-color":"#F7C600","font-size":"20","font-weight":"bold","border-bottom-width":"1","border-bottom-color":"rgba(247, 198, 0, 0.45)"},"Header":{"font-color":"#F7C600","font-size":"26","font-weight":"bold","margin-top":"12","margin-bottom":"8","text-transform":"uppercase"},"SubHeader":{"font-color":"#D7C9E8","font-size":"16","margin-bottom":"16"},"Card":{"background-color":"rgba(255, 255, 255, 0.04)","border-radius":"16","padding":"14","margin":"10 14","border-width":"1","border-color":"rgba(142, 68, 236, 0.3)"},"CardGlow":{"background-color":"#250B3A","border-radius":"18","border-width":"1","border-color":"rgba(247, 198, 0, 0.45)","padding":"16","margin":"12"},"Label":{"font-color":"#FFFFFF","font-size":"15"},"Caption":{"font-color":"#D9D9D9","font-size":"12"},"Highlight":{"font-color":"#F7C600","font-weight":"bold"},"TextField,\\n.TextView":{"background-color":"#2A103D","font-color":"#FFFFFF","border-radius":"12","border-width":"1","border-color":"rgba(142, 68, 236, 0.4)","padding":"12","margin-top":"6","margin-bottom":"12","placeholder-color":"#B99AD8"},"TextField:focus,\\n.TextView:focus":{"border-color":"#F7C600"},"Button":{"background-color":"#5A189A","font-color":"#FFFFFF","border-radius":"14","padding":"12","font-size":"16","font-weight":"bold","margin-top":"8","margin-bottom":"8"},"Button:pressed":{"background-color":"#8E44EC"},"PrimaryButton":{"background-color":"#F7C600","font-color":"#14061F"},"SecondaryButton":{"background-color":"transparent","border-width":"1","border-color":"#F7C600","font-color":"#F7C600"},"DangerButton":{"background-color":"#C62828","font-color":"white"},"ObjectCell":{"background-color":"rgba(255, 255, 255, 0.03)","border-radius":"14","margin":"8 10","padding":"10","border-width":"1","border-color":"rgba(142, 68, 236, 0.25)"},"ObjectCell-title":{"font-color":"#FFFFFF","font-size":"17","font-weight":"bold"},"ObjectCell-subtitle":{"font-color":"#D7C9E8","font-size":"13"},"ObjectCell-footnote":{"font-color":"#F7C600","font-size":"12"},"BadgeSuccess":{"background-color":"#00C853","font-color":"white","border-radius":"20","padding":"6 10"},"BadgeWarning":{"background-color":"#F7C600","font-color":"#14061F","border-radius":"20","padding":"6 10"},"BadgeOffline":{"background-color":"#B71C1C","font-color":"white","border-radius":"20","padding":"6 10"},"GlowBorder":{"border-width":"1","border-color":"rgba(247, 198, 0, 0.5)"},"NeonText":{"font-color":"#F7C600","font-weight":"bold","text-shadow":"0 0 6 rgba(247, 198, 0, 0.45)"},"LoginContainer":{"background-color":"#1A0828","padding":"24"},"LoginLogo":{"margin-top":"40","margin-bottom":"30","alignment":"center"},"LoginTitle":{"font-color":"#F7C600","font-size":"30","font-weight":"bold","text-align":"center","margin-bottom":"10"},"LoginSubtitle":{"font-color":"#D7C9E8","font-size":"15","text-align":"center","margin-bottom":"30"}}');
 
 /***/ }),
 
