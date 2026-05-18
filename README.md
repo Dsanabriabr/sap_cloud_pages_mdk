@@ -1,5 +1,9 @@
 # SAP MDK + Native iOS Interoperability Study
 
+| SAP Sing in | Update |
+|--------|------|
+| <img src="Images/SAP_MDK_Singin.png" width="200"> | <img src="Images/SAP_MDK_Update.png" width="200"> |
+
 ## Objective
 This project aims to explore the integration between SAP Mobile Development Kit (MDK) and native iOS (Swift) capabilities, focusing on:
 
@@ -16,6 +20,10 @@ While SAP MDK abstracts much of the complexity of mobile development, this study
 - Understand how MDK communicates with backend services  
 - Extend MDK capabilities using native iOS code  
 - Explore how far customization can go without abandoning MDK  
+
+| SAP Login | CRUD | Sync | Native |
+|--------|------|--------|--------|
+| <img src="Images/SAP_MDK_LoginUpdate_OData.gif" width="200"> | <img src="Images/SAP_MDK_OData_Sample_CRUD.gif" width="200"> | <img src="Images/SAP_MDK_Sync_OData.gif" width="200"> | <img src="Images/SAP_MDK_Native_Switch.gif" width="200"> |
 
 ---
 
