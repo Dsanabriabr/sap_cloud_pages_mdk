@@ -1,5 +1,9 @@
 # SAP MDK + Native iOS Interoperability Study
 
+<a href="https://www.sap.com/products/try-sap/trials-downloads.html?search=sdk%20for%20ios">
+  Mobile Development Kit Client v. 26.3.1
+</a>
+
 | SAP Sing in | Update |
 |--------|------|
 | <img src="Images/SAP_MDK_Singin.png" width="200"> | <img src="Images/SAP_MDK_Update.png" width="200"> |
